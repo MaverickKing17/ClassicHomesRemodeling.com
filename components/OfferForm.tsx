@@ -10,14 +10,36 @@ const OfferForm: React.FC<OfferFormProps> = ({ variant = 'hero' }) => {
   const [offer, setOffer] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      // In a real app, analytics would fire here
-    }, 1500);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/xgvdokqr", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          offer,
+          source: `OfferForm - ${variant}`,
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+        setOffer('');
+      } else {
+        setStatus('idle');
+        alert("There was a problem submitting your offer. Please try again.");
+      }
+    } catch (error) {
+      setStatus('idle');
+      alert("There was a problem submitting your offer. Please try again.");
+    }
   };
 
   if (status === 'success') {
@@ -27,7 +49,7 @@ const OfferForm: React.FC<OfferFormProps> = ({ variant = 'hero' }) => {
           <ShieldCheck className="w-6 h-6" />
         </div>
         <h3 className="text-xl font-bold mb-2">Offer Received</h3>
-        <p className="mb-4">A senior broker will review your offer of ${offer} and contact you at {email} within 2 hours.</p>
+        <p className="mb-4">A senior broker will review your offer and contact you shortly.</p>
         <button 
           onClick={() => setStatus('idle')}
           className="text-sm underline hover:text-gold transition-colors"
@@ -56,6 +78,7 @@ const OfferForm: React.FC<OfferFormProps> = ({ variant = 'hero' }) => {
           <label htmlFor={`email-${variant}`} className="sr-only">Email Address</label>
           <input
             id={`email-${variant}`}
+            name="email"
             type="email"
             required
             placeholder="ceo@company.com"
@@ -70,6 +93,7 @@ const OfferForm: React.FC<OfferFormProps> = ({ variant = 'hero' }) => {
           <label htmlFor={`offer-${variant}`} className="sr-only">Offer Amount</label>
           <input
             id={`offer-${variant}`}
+            name="offer"
             type="number"
             required
             min="5000"
