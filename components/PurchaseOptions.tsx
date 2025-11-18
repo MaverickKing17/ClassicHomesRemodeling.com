@@ -1,0 +1,106 @@
+import React from 'react';
+import { Check, CreditCard, Key } from 'lucide-react';
+import { PurchaseOption } from '../types';
+
+const PurchaseOptions: React.FC = () => {
+  const options: PurchaseOption[] = [
+    {
+      title: "Lease to Own",
+      price: "$1,500",
+      features: [
+        "Low initial capital outlay",
+        "20% down payment",
+        "Payments apply to purchase",
+        "Immediate domain usage",
+        "Cancel anytime option"
+      ],
+      isPrimary: false
+    },
+    {
+      title: "Buy It Now",
+      price: "$25,000",
+      features: [
+        "Instant 100% ownership",
+        "Secure Escrow.com transfer",
+        "Tax deductible asset",
+        "No monthly payments",
+        "Full resale rights immediately"
+      ],
+      isPrimary: true
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-surface" id="pricing">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Flexible Acquisition Options</h2>
+          <p className="text-gray-600 text-lg">
+            Whether you prefer a low monthly lease or an outright asset purchase, we have a secure structure for you.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {options.map((option, idx) => (
+            <div 
+              key={idx} 
+              className={`relative p-8 rounded-2xl border-2 transition-all duration-300 ${
+                option.isPrimary 
+                  ? 'bg-primary border-gold shadow-2xl scale-105 z-10' 
+                  : 'bg-white border-gray-200 hover:border-primary/50'
+              }`}
+            >
+              {option.isPrimary && (
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-primary font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider">
+                  Best Value
+                </div>
+              )}
+
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`p-3 rounded-full ${option.isPrimary ? 'bg-white/10 text-gold' : 'bg-primary/5 text-primary'}`}>
+                  {option.isPrimary ? <Key className="w-6 h-6" /> : <CreditCard className="w-6 h-6" />}
+                </div>
+                <h3 className={`text-2xl font-bold ${option.isPrimary ? 'text-white' : 'text-primary'}`}>
+                  {option.title}
+                </h3>
+              </div>
+
+              <div className="mb-8">
+                <span className={`text-4xl font-serif font-bold ${option.isPrimary ? 'text-gold' : 'text-primary'}`}>
+                  {option.price}
+                </span>
+                <span className={`text-sm ${option.isPrimary ? 'text-gray-400' : 'text-gray-500'}`}>
+                  {option.title.includes('Lease') ? '/month' : ' one-time'}
+                </span>
+              </div>
+
+              <ul className="space-y-4 mb-8">
+                {option.features.map((feature, fIdx) => (
+                  <li key={fIdx} className="flex items-start gap-3">
+                    <Check className={`w-5 h-5 mt-0.5 ${option.isPrimary ? 'text-gold' : 'text-green-600'}`} />
+                    <span className={`text-sm ${option.isPrimary ? 'text-gray-300' : 'text-gray-600'}`}>
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className={`w-full py-4 px-6 rounded-lg font-bold transition-all h-touch ${
+                  option.isPrimary
+                    ? 'bg-gold text-primary hover:bg-yellow-500'
+                    : 'bg-primary text-white hover:bg-slate-800'
+                }`}
+              >
+                {option.isPrimary ? 'Make An Offer' : 'Start Lease'}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PurchaseOptions;
