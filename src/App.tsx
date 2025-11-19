@@ -5,7 +5,7 @@ export default function App() {
   const [showExitModal, setShowExitModal] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  // Countdown timer (ends December 2, 2025)
+  // Countdown
   useEffect(() => {
     const end = new Date('2025-12-02T23:59:59').getTime();
     const timer = setInterval(() => {
@@ -15,7 +15,7 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // Reduced motion detection for hero video
+  // Reduced motion
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mq.matches);
@@ -24,7 +24,7 @@ export default function App() {
     return () => mq.removeEventListener('change', handler);
   }, []);
 
-  // Exit-intent modal
+  // Exit-intent
   useEffect(() => {
     const handleMouseLeave = () => {
       if (!sessionStorage.getItem('exitIntentShown')) {
@@ -36,38 +36,35 @@ export default function App() {
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, []);
 
-  // Tawk.to live chat injection
+  // Tawk.to
   useEffect(() => {
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
-    const s1 = document.createElement("script");
+    const s1 = document.createElement('script');
     s1.async = true;
     s1.src = 'https://embed.tawk.to/69161393fd8dcd195946f907/1j9v3oujf';
     s1.charset = 'UTF-8';
     s1.setAttribute('crossorigin', '*');
-    const s0 = document.getElementsByTagName("script")[0];
+    const s0 = document.getElementsByTagName('script')[0];
     s0.parentNode?.insertBefore(s1, s0);
   }, []);
 
+  const handleOffer = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Offer received! We will contact you within 24 hours.');
+  };
+
   return (
     <>
-      {/* Skip Link for accessibility */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed top-4 left-4 z-50 bg-[#0F172A] text-white px-4 py-2 rounded">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed top-4 left-4 z-50 bg-[#0F172A] text-white px-4 py-2 rounded">
         Skip to main content
       </a>
 
-      <div id="main-content" className="min-h-screen bg-[#FAFAFA] text-[#111111]">
-        {/* HERO WITH VIDEO BACKGROUND */}
+      <div id="main" className="min-h-screen bg-[#FAFAFA] text-[#111111] font-sans">
+        {/* HERO WITH VIDEO */}
         <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
           {!prefersReducedMotion ? (
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              className="absolute inset-0 w-full h-full object-cover -z-10"
-            >
+            <video autoPlay muted loop playsInline preload="auto" className="absolute inset-0 w-full h-full object-cover -z-10">
               <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-corridor-with-columns-31892-large.mp4" type="video/mp4" />
             </video>
           ) : (
@@ -82,57 +79,55 @@ export default function App() {
               Own the #1 Domain in Luxury Home Remodeling
             </h1>
             <p className="text-2xl md:text-3xl text-white mb-12 max-w-3xl mx-auto">
-              ClassicHomesRemodeling.com – the category-defining exact-match .com that instantly establishes authority, dominates search results, and captures high-value leads.
+              ClassicHomesRemodeling.com – the category-defining exact-match .com that instantly establishes authority and captures high-value leads.
             </p>
             <div className="bg-[#D4AF37]/20 backdrop-blur-md inline-block px-8 py-4 rounded-full text-white text-xl mb-12">
-              Only {daysLeft} Days of Exclusivity Left – Ends December 2, 2025
+              Only {daysLeft} Days Left – Ends December 2, 2025
             </div>
-            <form className="max-w-2xl mx-auto bg-white/95 backdrop-blur p-10 rounded-2xl shadow-2xl">
+            <form onSubmit={handleOffer} className="max-w-2xl mx-auto bg-white/95 backdrop-blur p-10 rounded-2xl shadow-2xl">
               <h2 className="text-3xl font-bold mb-8">Make Your Confidential Offer</h2>
               <input required placeholder="Name" className="w-full p-4 mb-4 border rounded-lg" />
               <input required type="email" placeholder="Email" className="w-full p-4 mb-4 border rounded-lg" />
               <input required placeholder="Offer Amount ($USD)" className="w-full p-4 mb-6 border rounded-lg" />
               <button type="submit" className="w-full bg-[#D4AF37] hover:bg-[#0F172A] text-black hover:text-white py-5 text-xl font-bold rounded-lg transition">
-                Submit Offer – Response in 24h
+                Submit Offer – Instant Response
               </button>
             </form>
           </div>
         </section>
 
         {/* Trust & Safety */}
-        <section className="py-24 bg-white">
-          <div className="max-w-5xl mx-auto text-center px-6">
-            <h2 className="text-5xl font-bold mb-12">Secure Transaction Guaranteed</h2>
-            <div className="grid md:grid-cols-3 gap-12">
-              <div className="bg-[#FAFAFA] p-8 rounded-xl">
-                <p className="text-6xl mb-4">Escrow.com</p>
-                <p className="text-xl">100% Buyer Protection</p>
-              </div>
-              <div className="bg-[#FAFAFA] p-8 rounded-xl">
-                <p className="text-6xl mb-4">24-72h</p>
-                <p className="text-xl">Fast Transfer</p>
-              </div>
-              <div className="bg-[#FAFAFA] p-8 rounded-xl">
-                <p className="text-6xl mb-4">Lease-to-Own</p>
-                <p className="text-xl">From ~$18,500/mo</p>
-              </div>
+        <section className="py-24 bg-white text-center">
+          <h2 className="text-5xl font-bold mb-12">Secure Transaction Guaranteed</h2>
+          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto px-6">
+            <div className="bg-[#FAFAFA] p-8 rounded-xl shadow">
+              <p className="text-6xl mb-4">Escrow.com</p>
+              <p className="text-xl">100% Buyer Protection</p>
+            </div>
+            <div className="bg-[#FAFAFA] p-8 rounded-xl shadow">
+              <p className="text-6xl mb-4">24-72h</p>
+              <p className="text-xl">Fast Transfer</p>
+            </div>
+            <div className="bg-[#FAFAFA] p-8 rounded-xl shadow">
+              <p className="text-6xl mb-4">Lease-to-Own</p>
+              <p className="text-xl">From ~$18,500/mo</p>
             </div>
           </div>
         </section>
 
-        {/* Benefits Grid */}
+        {/* Benefits */}
         <section className="py-24 bg-[#FAFAFA]">
-          <h2 className="text-5xl text-center font-bold mb-16">Why This Domain Wins</h2>
+          <h2 className="text-5xl font-bold text-center mb-16">Why This Domain Wins</h2>
           <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto px-6">
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+            <div className="bg-white p-8 rounded-xl shadow text-center">
               <h3 className="text-3xl font-bold mb-4">Instant Brand Authority</h3>
-              <p>Exact-match .com gives immediate credibility with high-net-worth clients</p>
+              <p>Exact-match .com gives immediate trust with high-net-worth clients</p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+            <div className="bg-white p-8 rounded-xl shadow text-center">
               <h3 className="text-3xl font-bold mb-4">SEO Dominance</h3>
               <p>12,100+ related searches/mo · $30–$68 CPC</p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+            <div className="bg-white p-8 rounded-xl shadow text-center">
               <h3 className="text-3xl font-bold mb-4">Category Ownership</h3>
               <p>Be the undisputed leader for the next 20 years</p>
             </div>
@@ -141,7 +136,7 @@ export default function App() {
 
         {/* Comparable Sales */}
         <section className="py-24 bg-white">
-          <h2 className="text-5xl text-center font-bold mb-16">Recent Comparable Sales</h2>
+          <h2 className="text-5xl font-bold text-center mb-16">Recent Comparable Sales</h2>
           <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto text-center">
             <div>
               <p className="text-5xl font-bold text-[#D4AF37]">HomeRemodeling.com</p>
@@ -161,9 +156,9 @@ export default function App() {
         {/* Final CTA */}
         <section className="py-32 bg-[#0F172A] text-white text-center">
           <h2 className="text-6xl font-bold mb-8">
-            Secure ClassicHomesRemodeling.com Before Your Competitor Does
+            Secure This Domain Before Your Competitor Does
           </h2>
-          <button className="bg-[#D4AF37] hover:bg-white text-black hover:text-[#0F172A] px-16 py-8 text-2xl font-bold rounded-lg transition">
+          <button onClick={() => document.querySelector('form')?.scrollIntoView({behavior: 'smooth'})} className="bg-[#D4AF37] hover:bg-white text-black hover:text-[#0F172A] px-16 py-8 text-2xl font-bold rounded-lg transition">
             Make Your Offer Now
           </button>
         </section>
@@ -171,13 +166,12 @@ export default function App() {
         {/* Exit Intent Modal */}
         {showExitModal && (
           <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-6">
-            <div className="bg-white text-black p-10 rounded-2xl max-w-lg">
-              <button onClick={() => setShowExitModal(false)} className="x" className="float-right text-2xl">×</button>
-              <h3 className="text-3xl font-bold mb-4">Wait! Get the Valuation Report</h3>
-              <p className="mb-6">Not ready to offer? Download the free professional valuation report ($497 value) breaking down the exact SEO and brand value of ClassicHomesRemodeling.com</p>
-              <input type="email" placeholder="Your email" className="w-full p-4 border rounded-lg mb-4" />
+            <div className="bg-white text-black p-10 rounded-2xl max-w-lg relative">
+              <button onClick={() => setShowExitModal(false)} className="absolute top-4 right-4 text-3xl">&times;</button>
+              <h3 className="text-3xl font-bold mb-4">Wait — Get the Free Valuation Report</h3>
+              <p className="mb-6">Not ready to offer? Download the professional valuation report ($497 value) for ClassicHomesRemodeling.com</p>
+              <input type="email" placeholder="Enter your email" className="w-full p-4 border rounded-lg mb-4" />
               <button className="w-full bg-[#D4AF37] py-4 text-xl font-bold">Send Me The Report</button>
-              <p className="text-center mt-4 text-sm">No thanks, I don't want to dominate my market.</p>
             </div>
           </div>
         )}
