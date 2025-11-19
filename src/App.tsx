@@ -17,11 +17,12 @@ import TawkToChat from '@/components/TawkToChat';
 export default function App() {
   const [showExitModal, setShowExitModal] = useState(false);
 
+  // Exit-intent modal (once per session)
   useEffect(() => {
     const handleMouseLeave = () => {
-      if (!sessionStorage.getItem('exitIntentShown')) {
+      if (!sessionStorage.getItem('exitIntentShown2025')) {
         setShowExitModal(true);
-        sessionStorage.setItem('exitIntentShown', 'true');
+        sessionStorage.setItem('exitIntentShown2025', 'true');
       }
     };
     document.addEventListener('mouseleave', handleMouseLeave);
@@ -31,7 +32,7 @@ export default function App() {
   return (
     <>
       <SkipLink />
-      <div className="min-h-screen bg-[#FAFAFA] text-[#111111]">
+      <div className="min-h-screen bg-[#FAFAFA] text-[#111111] overflow-x-hidden">
         <HeroVideoBackground />
         <Hero />
         <TrustSafety />
@@ -41,10 +42,16 @@ export default function App() {
         <PurchaseOptions />
         <FAQs />
         <Footer />
+
+        {/* Floating & sticky CTAs */}
         <FloatingCTAButton />
         <StickyCTA />
+
+        {/* Exit-intent valuation report modal */}
         {showExitModal && <ExitIntentModal onClose={() => setShowExitModal(false)} />}
       </div>
+
+      {/* Tawk.to live chat – loads globally */}
       <TawkToChat />
     </>
   );
