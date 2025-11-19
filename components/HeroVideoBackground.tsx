@@ -6,7 +6,7 @@ export default function HeroVideoBackground() {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReducedMotion(mq.matches);
-    const handler = () => setReducedMotion(mq.matches);
+    const handler = (e) => setReducedMotion(e.matches);
     mq.addEventListener('change', handler);
     return () => mq.removeEventListener('change', handler);
   }, []);
@@ -14,10 +14,10 @@ export default function HeroVideoBackground() {
   if (reducedMotion) {
     return (
       <div className="fixed inset-0 -z-10 bg-[#0F172A]">
-        <img
-          src="https://i.ibb.co/gbY4JfYQ/classic-homes-remodeling-logo.png"
-          alt=""
-          className="w-full h-full object-cover opacity-10"
+        <img 
+          src="https://i.ibb.co/gbY4JfYQ/classic-homes-remodeling-logo.png" 
+          alt="" 
+          className="w-full h-full object-cover opacity-20"
         />
       </div>
     );
@@ -33,9 +33,11 @@ export default function HeroVideoBackground() {
         preload="auto"
         className="w-full h-full object-cover"
       >
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-corridor-with-columns-31892-large.mp4" type="video/mp4" />
+        <source src="https://cdn.coverr.co/videos/coverr-elegant-living-room-6829/1080p.mp4" type="video/mp4" />
+        {/* Fallback poster */}
+        <img src="https://i.ibb.co/gbY4JfYQ/classic-homes-remodeling-logo.png" className="w-full h-full object-cover" />
       </video>
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/55" />
     </div>
   );
 }
