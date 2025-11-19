@@ -92,13 +92,13 @@ const FAQs: React.FC = () => {
         }}
       />
       
-      {/* Dark Overlay for text readability */}
-      <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm z-0" />
+      {/* Vignette Gradient Overlay: Readable Text, Visible Image */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/50 to-primary/90 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-gray-300">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-lg">Frequently Asked Questions</h2>
+          <p className="text-gray-300 drop-shadow-md font-medium">
             Due diligence is key to a smart acquisition. Here is everything you need to know about valuing, securing, and transferring this asset.
           </p>
         </div>
@@ -112,7 +112,7 @@ const FAQs: React.FC = () => {
               className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 border ${
                 activeCategory === cat.id 
                   ? 'bg-gold text-primary border-gold shadow-[0_0_15px_rgba(212,175,55,0.5)]' 
-                  : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10 hover:border-gold/50'
+                  : 'bg-primary/40 backdrop-blur text-gray-300 border-white/20 hover:bg-primary/60 hover:border-gold/50'
               }`}
             >
               <cat.icon className="w-4 h-4" />
@@ -125,7 +125,7 @@ const FAQs: React.FC = () => {
         <div className="max-w-3xl mx-auto min-h-[400px]">
           <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-300">
             {activeQuestions.map((faq, idx) => (
-              <div key={idx} className="bg-white/95 backdrop-blur rounded-lg overflow-hidden border border-white/10 hover:border-gold/50 transition-colors">
+              <div key={idx} className="bg-white/95 backdrop-blur rounded-lg overflow-hidden border border-white/10 hover:border-gold/50 transition-colors shadow-lg">
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:bg-gray-50"
@@ -140,7 +140,7 @@ const FAQs: React.FC = () => {
                 </button>
                 
                 {openIndex === idx && (
-                  <div className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-100 animate-in slide-in-from-top-2 duration-200">
+                  <div className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-100 animate-in slide-in-from-top-2 duration-200 bg-white">
                     {faq.a}
                   </div>
                 )}

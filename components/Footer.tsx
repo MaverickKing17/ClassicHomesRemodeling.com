@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import { X, Shield, FileText, AlertTriangle, Info, Award, Mail, Server, HelpCircle, CreditCard } from 'lucide-react';
 import { footerPages, FooterPageKey } from './FooterPages';
 
 const Footer: React.FC = () => {
@@ -15,6 +15,14 @@ const Footer: React.FC = () => {
     document.body.style.overflow = 'unset';
   };
 
+  // Helper for link styling
+  const FooterLink = ({ icon: Icon, label, onClick }: { icon: React.ComponentType<any>, label: string, onClick: () => void }) => (
+    <button onClick={onClick} className="flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors group text-left">
+      <Icon className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
+      <span>{label}</span>
+    </button>
+  );
+
   return (
     <>
       <footer className="bg-secondary text-gray-400 py-16 pb-24 md:pb-16 border-t border-gray-800 font-sans">
@@ -27,30 +35,36 @@ const Footer: React.FC = () => {
             />
 
             {/* Footer Navigation Grid - Aligned with PDF Categories */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl mb-16 text-center md:text-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-10 w-full max-w-5xl mb-16">
               
               {/* 1. Legal & Trust */}
-              <div className="flex flex-col items-center md:items-start space-y-4">
+              <div className="flex flex-col items-center md:items-start space-y-5">
                 <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Legal & Trust</h4>
-                <button onClick={() => openModal('privacy')} className="text-sm hover:text-gold transition-colors">Privacy Policy</button>
-                <button onClick={() => openModal('terms')} className="text-sm hover:text-gold transition-colors">Terms of Service</button>
-                <button onClick={() => openModal('disclaimer')} className="text-sm hover:text-gold transition-colors">Disclaimer</button>
+                <FooterLink icon={Shield} label="Privacy Policy" onClick={() => openModal('privacy')} />
+                <FooterLink icon={FileText} label="Terms of Service" onClick={() => openModal('terms')} />
+                <FooterLink icon={AlertTriangle} label="Disclaimer" onClick={() => openModal('disclaimer')} />
               </div>
 
               {/* 2. Company & Credibility */}
-              <div className="flex flex-col items-center md:items-start space-y-4">
+              <div className="flex flex-col items-center md:items-start space-y-5">
                 <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Company & Credibility</h4>
-                <button onClick={() => openModal('about')} className="text-sm hover:text-gold transition-colors">About ClassicHomes</button>
-                <button onClick={() => openModal('mission')} className="text-sm hover:text-gold transition-colors">Our Mission</button>
-                <button onClick={() => openModal('contact')} className="text-sm hover:text-gold transition-colors">Contact Broker</button>
+                <FooterLink icon={Info} label="About ClassicHomes" onClick={() => openModal('about')} />
+                <FooterLink icon={Award} label="Our Mission" onClick={() => openModal('mission')} />
+                <FooterLink icon={Mail} label="Contact Broker" onClick={() => openModal('contact')} />
               </div>
 
               {/* 3. Transaction & Support */}
-              <div className="flex flex-col items-center md:items-start space-y-4">
+              <div className="flex flex-col items-center md:items-start space-y-5">
                 <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Transaction & Support</h4>
-                <button onClick={() => openModal('services')} className="text-sm hover:text-gold transition-colors">Domain Services / Transfer</button>
-                <a href="#faqs" className="text-sm hover:text-gold transition-colors">Frequently Asked Questions</a>
-                <a href="#pricing" className="text-sm hover:text-gold transition-colors">Make an Offer</a>
+                <FooterLink icon={Server} label="Domain Services / Transfer" onClick={() => openModal('services')} />
+                <a href="#faqs" className="flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors group text-left">
+                  <HelpCircle className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
+                  <span>Frequently Asked Questions</span>
+                </a>
+                <a href="#pricing" className="flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors group text-left">
+                  <CreditCard className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
+                  <span>Make an Offer</span>
+                </a>
               </div>
 
             </div>
@@ -82,18 +96,19 @@ const Footer: React.FC = () => {
               <button 
                 onClick={closeModal}
                 className="p-2 text-gray-400 hover:text-primary hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Close modal"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 md:p-8">
+            <div className="p-6 md:p-8 overflow-y-auto">
               {footerPages[activeModal].content}
             </div>
 
             {/* Modal Footer */}
-            <div className="p-6 border-t border-gray-100 bg-gray-50 rounded-b-2xl flex justify-end">
+            <div className="p-6 border-t border-gray-100 bg-gray-50 rounded-b-2xl flex justify-end sticky bottom-0 z-10">
               <button 
                 onClick={closeModal}
                 className="px-6 py-2 bg-primary text-white rounded-lg font-bold hover:bg-slate-800 transition-colors"

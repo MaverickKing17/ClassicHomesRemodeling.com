@@ -45,13 +45,13 @@ const PurchaseOptions: React.FC = () => {
         }}
       />
       
-      {/* Dark Overlay - Reduced opacity to make kitchen visibly clear */}
-      <div className="absolute inset-0 bg-primary/50 z-0" />
+      {/* Vignette Overlay: Ensures text at top/bottom is readable, but kitchen is clear in middle */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/30 to-primary/90 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-md">Flexible Acquisition Options</h2>
-          <p className="text-white text-lg font-medium drop-shadow-md">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-xl">Flexible Acquisition Options</h2>
+          <p className="text-white text-lg font-medium drop-shadow-lg">
             Whether you prefer a low monthly lease or an outright asset purchase, we have a secure structure for you.
           </p>
         </div>
@@ -63,11 +63,11 @@ const PurchaseOptions: React.FC = () => {
               className={`relative p-8 rounded-2xl border-2 transition-all duration-300 ${
                 option.isPrimary 
                   ? 'bg-primary/95 backdrop-blur-sm border-gold shadow-2xl scale-105 z-10' 
-                  : 'bg-white/95 backdrop-blur-sm border-gray-200 hover:border-primary/50'
+                  : 'bg-white/95 backdrop-blur-sm border-gray-200 hover:border-primary/50 shadow-xl'
               }`}
             >
               {option.isPrimary && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-primary font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider shadow-lg">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-primary font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider shadow-lg whitespace-nowrap">
                   Best Value
                 </div>
               )}
@@ -105,7 +105,7 @@ const PurchaseOptions: React.FC = () => {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={`w-full py-4 px-6 rounded-lg font-bold transition-all h-touch ${
                   option.isPrimary
-                    ? 'bg-gold text-primary hover:bg-yellow-500 shadow-lg'
+                    ? 'bg-gold text-primary hover:bg-yellow-500 shadow-lg hover:shadow-gold/20'
                     : 'bg-primary text-white hover:bg-slate-800 shadow-md'
                 }`}
               >

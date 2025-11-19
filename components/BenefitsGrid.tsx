@@ -40,7 +40,7 @@ const BenefitsGrid: React.FC = () => {
   const BG_IMAGE = "https://i.ibb.co/BHzWjHpW/luxury-living-room.jpg";
 
   return (
-    <section className="py-20 relative bg-primary" id="benefits">
+    <section className="py-24 relative bg-primary" id="benefits">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -51,13 +51,13 @@ const BenefitsGrid: React.FC = () => {
         }}
       />
       
-      {/* Dark Overlay - Reduced opacity to make image VERY clear as requested */}
-      <div className="absolute inset-0 bg-black/30 z-0" />
+      {/* Vignette Overlay: Dark top/bottom for text legibility, very clear center (10% opacity) for image visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/10 to-black/90 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 text-shadow-lg drop-shadow-md">Why This Domain Wins</h2>
-          <p className="text-white text-lg font-medium drop-shadow-md">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-2xl">Why This Domain Wins</h2>
+          <p className="text-white text-lg font-medium drop-shadow-2xl">
             In the high-ticket remodeling industry, trust is everything. 
             <span className="font-bold text-gold"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a competitive moat.
           </p>
@@ -67,9 +67,9 @@ const BenefitsGrid: React.FC = () => {
           {benefits.map((benefit, idx) => (
             <div 
               key={idx} 
-              className="bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 group transform hover:-translate-y-1"
+              className="bg-white p-8 rounded-xl shadow-2xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-300 border border-gray-100 hover:border-gold/30 group transform hover:-translate-y-2"
             >
-              <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+              <div className="w-14 h-14 bg-gray-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors border border-gray-100">
                 <benefit.icon className="w-7 h-7 text-primary group-hover:text-primary transition-colors" />
               </div>
               <h3 className="text-xl font-bold text-primary mb-3">{benefit.title}</h3>
