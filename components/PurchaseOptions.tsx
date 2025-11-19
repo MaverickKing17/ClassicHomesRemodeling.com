@@ -30,12 +30,12 @@ const PurchaseOptions: React.FC = () => {
     }
   ];
 
-  // Luxury Kitchen Background
-  const BG_IMAGE = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2053&auto=format&fit=crop";
+  // Luxury Kitchen Background - Updated to provided URL
+  const BG_IMAGE = "https://i.ibb.co/5XcQjXDG/luxury-kitchen.jpg";
 
   return (
     <section className="py-20 relative bg-primary" id="pricing">
-      {/* Background Image & Overlay */}
+      {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -44,12 +44,14 @@ const PurchaseOptions: React.FC = () => {
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 bg-primary/90 z-0" />
+      
+      {/* Dark Overlay - Reduced opacity to make kitchen visibly clear */}
+      <div className="absolute inset-0 bg-primary/50 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Flexible Acquisition Options</h2>
-          <p className="text-gray-300 text-lg">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-md">Flexible Acquisition Options</h2>
+          <p className="text-white text-lg font-medium drop-shadow-md">
             Whether you prefer a low monthly lease or an outright asset purchase, we have a secure structure for you.
           </p>
         </div>
@@ -60,12 +62,12 @@ const PurchaseOptions: React.FC = () => {
               key={idx} 
               className={`relative p-8 rounded-2xl border-2 transition-all duration-300 ${
                 option.isPrimary 
-                  ? 'bg-primary border-gold shadow-2xl scale-105 z-10' 
-                  : 'bg-white border-gray-200 hover:border-primary/50'
+                  ? 'bg-primary/95 backdrop-blur-sm border-gold shadow-2xl scale-105 z-10' 
+                  : 'bg-white/95 backdrop-blur-sm border-gray-200 hover:border-primary/50'
               }`}
             >
               {option.isPrimary && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-primary font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-primary font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider shadow-lg">
                   Best Value
                 </div>
               )}
@@ -103,8 +105,8 @@ const PurchaseOptions: React.FC = () => {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={`w-full py-4 px-6 rounded-lg font-bold transition-all h-touch ${
                   option.isPrimary
-                    ? 'bg-gold text-primary hover:bg-yellow-500'
-                    : 'bg-primary text-white hover:bg-slate-800'
+                    ? 'bg-gold text-primary hover:bg-yellow-500 shadow-lg'
+                    : 'bg-primary text-white hover:bg-slate-800 shadow-md'
                 }`}
               >
                 {option.isPrimary ? 'Make An Offer' : 'Start Lease'}

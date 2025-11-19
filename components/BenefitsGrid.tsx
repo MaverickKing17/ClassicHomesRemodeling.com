@@ -36,12 +36,12 @@ const BenefitsGrid: React.FC = () => {
     }
   ];
 
-  // Luxury Living Room Background
-  const BG_IMAGE = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop";
+  // Luxury Living Room Background - Direct image link
+  const BG_IMAGE = "https://i.ibb.co/BHzWjHpW/luxury-living-room.jpg";
 
   return (
     <section className="py-20 relative bg-primary" id="benefits">
-      {/* Background Image & Overlay */}
+      {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -50,14 +50,16 @@ const BenefitsGrid: React.FC = () => {
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute inset-0 bg-primary/90 z-0" />
+      
+      {/* Dark Overlay - Reduced opacity to make image VERY clear as requested */}
+      <div className="absolute inset-0 bg-black/30 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Why This Domain Wins</h2>
-          <p className="text-gray-300 text-lg">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 text-shadow-lg drop-shadow-md">Why This Domain Wins</h2>
+          <p className="text-white text-lg font-medium drop-shadow-md">
             In the high-ticket remodeling industry, trust is everything. 
-            <span className="font-semibold text-gold"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a competitive moat.
+            <span className="font-bold text-gold"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a competitive moat.
           </p>
         </div>
 
@@ -65,7 +67,7 @@ const BenefitsGrid: React.FC = () => {
           {benefits.map((benefit, idx) => (
             <div 
               key={idx} 
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 group"
+              className="bg-white/95 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 group transform hover:-translate-y-1"
             >
               <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
                 <benefit.icon className="w-7 h-7 text-primary group-hover:text-primary transition-colors" />
