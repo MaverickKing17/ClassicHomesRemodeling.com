@@ -36,14 +36,28 @@ const BenefitsGrid: React.FC = () => {
     }
   ];
 
+  // Luxury Living Room Background
+  const BG_IMAGE = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop";
+
   return (
-    <section className="py-20 bg-surface" id="benefits">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative bg-primary" id="benefits">
+      {/* Background Image & Overlay */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${BG_IMAGE})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      <div className="absolute inset-0 bg-primary/90 z-0" />
+
+      <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Why This Domain Wins</h2>
-          <p className="text-gray-600 text-lg">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Why This Domain Wins</h2>
+          <p className="text-gray-300 text-lg">
             In the high-ticket remodeling industry, trust is everything. 
-            <span className="font-semibold text-primary"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a competitive moat.
+            <span className="font-semibold text-gold"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a competitive moat.
           </p>
         </div>
 
