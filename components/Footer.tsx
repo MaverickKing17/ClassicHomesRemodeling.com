@@ -17,65 +17,51 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className="bg-secondary text-gray-400 py-12 pb-24 md:pb-12 border-t border-gray-800">
+      <footer className="bg-secondary text-gray-400 py-16 pb-24 md:pb-16 border-t border-gray-800 font-sans">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center">
             <img 
               src="https://i.ibb.co/gbY4JfYQ/classic-homes-remodeling-logo.png" 
               alt="Classic Homes Remodeling" 
-              className="h-12 mb-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
+              className="h-14 mb-10 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
             />
 
-            {/* Footer Navigation Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl mb-12 text-center md:text-left">
-              {/* Legal & Trust */}
-              <div className="flex flex-col space-y-3">
-                <h4 className="text-white font-serif font-bold mb-2">Legal & Trust</h4>
-                <button onClick={() => openModal('privacy')} className="text-sm hover:text-gold transition-colors text-left md:text-center">Privacy Policy</button>
-                <button onClick={() => openModal('terms')} className="text-sm hover:text-gold transition-colors text-left md:text-center">Terms of Service</button>
-                <button onClick={() => openModal('disclaimer')} className="text-sm hover:text-gold transition-colors text-left md:text-center">Disclaimer</button>
+            {/* Footer Navigation Grid - Aligned with PDF Categories */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl mb-16 text-center md:text-left">
+              
+              {/* 1. Legal & Trust */}
+              <div className="flex flex-col items-center md:items-start space-y-4">
+                <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Legal & Trust</h4>
+                <button onClick={() => openModal('privacy')} className="text-sm hover:text-gold transition-colors">Privacy Policy</button>
+                <button onClick={() => openModal('terms')} className="text-sm hover:text-gold transition-colors">Terms of Service</button>
+                <button onClick={() => openModal('disclaimer')} className="text-sm hover:text-gold transition-colors">Disclaimer</button>
               </div>
 
-              {/* Company */}
-              <div className="flex flex-col space-y-3">
-                <h4 className="text-white font-serif font-bold mb-2">Company</h4>
-                <button onClick={() => openModal('about')} className="text-sm hover:text-gold transition-colors text-left md:text-center">About ClassicHomes</button>
-                <button onClick={() => openModal('mission')} className="text-sm hover:text-gold transition-colors text-left md:text-center">Our Mission</button>
-                <button onClick={() => openModal('contact')} className="text-sm hover:text-gold transition-colors text-left md:text-center">Contact</button>
+              {/* 2. Company & Credibility */}
+              <div className="flex flex-col items-center md:items-start space-y-4">
+                <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Company & Credibility</h4>
+                <button onClick={() => openModal('about')} className="text-sm hover:text-gold transition-colors">About ClassicHomes</button>
+                <button onClick={() => openModal('mission')} className="text-sm hover:text-gold transition-colors">Our Mission</button>
+                <button onClick={() => openModal('contact')} className="text-sm hover:text-gold transition-colors">Contact Broker</button>
               </div>
 
-              {/* Transaction */}
-              <div className="flex flex-col space-y-3">
-                <h4 className="text-white font-serif font-bold mb-2">Transaction</h4>
-                <button onClick={() => openModal('services')} className="text-sm hover:text-gold transition-colors text-left md:text-center">Domain Services</button>
-                <a href="#pricing" className="text-sm hover:text-gold transition-colors text-left md:text-center">Escrow Process</a>
-                <a href="#benefits" className="text-sm hover:text-gold transition-colors text-left md:text-center">Why Buy?</a>
+              {/* 3. Transaction & Support */}
+              <div className="flex flex-col items-center md:items-start space-y-4">
+                <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Transaction & Support</h4>
+                <button onClick={() => openModal('services')} className="text-sm hover:text-gold transition-colors">Domain Services / Transfer</button>
+                <a href="#faqs" className="text-sm hover:text-gold transition-colors">Frequently Asked Questions</a>
+                <a href="#pricing" className="text-sm hover:text-gold transition-colors">Make an Offer</a>
               </div>
 
-              {/* Support */}
-              <div className="flex flex-col space-y-3">
-                <h4 className="text-white font-serif font-bold mb-2">Support</h4>
-                <button 
-                  onClick={() => {
-                    const faqSection = document.getElementById('faqs'); // Assuming FAQs.tsx has id="faqs" (added below in App or need to ensure FAQs component has id)
-                    // Actually, FAQs component usually doesn't have ID in previous steps, but I can target by text content logic or just scroll to bottom
-                    // Best effort:
-                     const el = document.querySelector('section h2')?.closest('section'); // A bit risky
-                     // Let's just use window scroll or link anchor
-                  }}
-                  className="text-sm hover:text-gold transition-colors text-left md:text-center"
-                >
-                  <a href="#root">Back to Top</a>
-                </button>
-                <span className="text-sm text-gray-600 cursor-not-allowed text-left md:text-center">Live Chat (Online)</span>
-              </div>
             </div>
 
-            <div className="w-full max-w-md border-t border-gray-800 pt-8 text-center">
-               <p className="text-xs text-gray-600 leading-relaxed">
+            <div className="w-full max-w-2xl border-t border-gray-800 pt-8 text-center">
+               <p className="text-xs text-gray-500 leading-relaxed">
                 © {new Date().getFullYear()} Classic Homes Remodeling. All rights reserved. <br/>
-                This site is a premium domain sales landing page. Not affiliated with any physical construction firm. <br/>
-                Transaction facilitation provided securely by Escrow.com.
+                This site is a premium digital asset sales landing page. We are not affiliated with any physical construction firm. <br/>
+                <span className="text-gray-400 mt-2 block">
+                  Secure Transaction Facilitation by <strong className="text-gray-300">Escrow.com</strong>
+                </span>
               </p>
             </div>
           </div>
