@@ -103,13 +103,13 @@ const FAQs: React.FC = () => {
           </p>
         </div>
         
-        {/* Category Tabs */}
+        {/* Category Tabs - Increased padding for touch targets */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => { setActiveCategory(cat.id); setOpenIndex(null); }}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm md:text-base font-bold transition-all duration-300 border ${
+              className={`flex items-center gap-2 px-6 py-4 rounded-full text-sm md:text-base font-bold transition-all duration-300 border ${
                 activeCategory === cat.id 
                   ? 'bg-gold text-primary border-gold shadow-[0_0_15px_rgba(212,175,55,0.5)]' 
                   : 'bg-primary/40 backdrop-blur text-gray-300 border-white/20 hover:bg-primary/60 hover:border-gold/50'
@@ -128,7 +128,7 @@ const FAQs: React.FC = () => {
               <div key={idx} className="bg-white/95 backdrop-blur rounded-lg overflow-hidden border border-white/10 hover:border-gold/50 transition-colors shadow-lg">
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:bg-gray-50"
+                  className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:bg-gray-50 min-h-[44px]"
                   aria-expanded={openIndex === idx}
                 >
                   <span className="font-bold text-primary pr-4">{faq.q}</span>

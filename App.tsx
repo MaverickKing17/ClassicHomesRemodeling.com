@@ -1,6 +1,5 @@
 import React from 'react';
 import SkipLink from './components/SkipLink';
-import TawkToChat from './components/TawkToChat';
 import Hero from './components/Hero';
 import TrustSafety from './components/TrustSafety';
 import BenefitsGrid from './components/BenefitsGrid';
@@ -17,7 +16,6 @@ function App() {
   return (
     <main className="min-h-screen flex flex-col relative">
       <SkipLink />
-      <TawkToChat />
       
       <div id="main-content">
         <Hero />

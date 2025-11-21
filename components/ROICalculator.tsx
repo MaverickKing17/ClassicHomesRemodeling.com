@@ -22,7 +22,8 @@ const ROICalculator: React.FC = () => {
               <span>ROI & Lease Calculator</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">The Math Makes Sense</h2>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+            {/* Updated Color for WCAG AA Compliance */}
+            <p className="text-[#E0E0E0] text-lg mb-8 leading-relaxed">
               Even with a lease-to-own model at ${leaseCost}/mo, a single high-end remodeling job covers the cost. 
               See how many leads you need to profit instantly.
             </p>

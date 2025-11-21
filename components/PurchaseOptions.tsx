@@ -34,7 +34,7 @@ const PurchaseOptions: React.FC = () => {
   const BG_IMAGE = "https://i.ibb.co/5XcQjXDG/luxury-kitchen.jpg";
 
   return (
-    <section className="py-20 relative bg-primary" id="pricing">
+    <section className="py-24 relative bg-primary" id="pricing">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -45,13 +45,13 @@ const PurchaseOptions: React.FC = () => {
         }}
       />
       
-      {/* Vignette Overlay: Ensures text at top/bottom is readable, but kitchen is clear in middle */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/30 to-primary/90 z-0" />
+      {/* Vignette Overlay: Dark edges for text contrast, Transparent center for maximum image clarity */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/0 to-primary/95 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-xl">Flexible Acquisition Options</h2>
-          <p className="text-white text-lg font-medium drop-shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-2xl">Flexible Acquisition Options</h2>
+          <p className="text-white text-lg font-medium drop-shadow-2xl">
             Whether you prefer a low monthly lease or an outright asset purchase, we have a secure structure for you.
           </p>
         </div>
@@ -62,8 +62,8 @@ const PurchaseOptions: React.FC = () => {
               key={idx} 
               className={`relative p-8 rounded-2xl border-2 transition-all duration-300 ${
                 option.isPrimary 
-                  ? 'bg-primary/95 backdrop-blur-sm border-gold shadow-2xl scale-105 z-10' 
-                  : 'bg-white/95 backdrop-blur-sm border-gray-200 hover:border-primary/50 shadow-xl'
+                  ? 'bg-primary border-gold shadow-2xl scale-105 z-10' // Solid background for max contrast
+                  : 'bg-white border-gray-200 hover:border-primary/50 shadow-xl' // Solid background for max contrast
               }`}
             >
               {option.isPrimary && (

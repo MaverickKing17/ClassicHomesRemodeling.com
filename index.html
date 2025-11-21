@@ -19,21 +19,37 @@
     {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "classichomesremodeling.com",
+      "name": "classichomesremodeling.com - Premium Domain Name",
+      "description": "The category-defining domain name for high-end home renovations. Available for immediate acquisition or lease-to-own.",
       "image": "https://i.ibb.co/gbY4JfYQ/classic-homes-remodeling-logo.png",
-      "description": "Premium domain name for sale. The ultimate authority in luxury home remodeling.",
       "brand": {
         "@type": "Brand",
         "name": "Classic Homes Remodeling"
       },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://classichomesremodeling.com",
-        "priceCurrency": "USD",
-        "price": "25000", 
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      }
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Buy Now",
+          "price": "25000", 
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "businessFunction": "http://purl.org/goodrelations/v1#Sell"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lease to Own",
+          "price": "1500",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "businessFunction": "http://purl.org/goodrelations/v1#LeaseOut",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1500",
+            "priceCurrency": "USD",
+            "unitCode": "MON"
+          }
+        }
+      ]
     }
     </script>
 
@@ -62,11 +78,13 @@
       }
     </script>
     <style>
-      /* Custom focus ring for accessibility */
+      /* Custom focus ring for accessibility - Global Focus State */
       :focus-visible {
         outline: 3px solid #D4AF37;
         outline-offset: 2px;
+        border-radius: 4px;
       }
+      
       /* Hide scrollbar for clean modal UI */
       .no-scroll {
         overflow: hidden;
