@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Shield, FileText, AlertTriangle, Info, Award, Mail, Server, HelpCircle, CreditCard } from 'lucide-react';
+import { X, Shield, FileText, AlertTriangle, Info, Award, Mail, Server, HelpCircle, CreditCard, Eye, Cookie, ShoppingCart } from 'lucide-react';
 import { footerPages, FooterPageKey } from './FooterPages';
 
 const Footer: React.FC = () => {
@@ -43,6 +43,8 @@ const Footer: React.FC = () => {
                 <FooterLink icon={Shield} label="Privacy Policy" onClick={() => openModal('privacy')} />
                 <FooterLink icon={FileText} label="Terms of Service" onClick={() => openModal('terms')} />
                 <FooterLink icon={AlertTriangle} label="Disclaimer" onClick={() => openModal('disclaimer')} />
+                <FooterLink icon={Eye} label="Accessibility Statement" onClick={() => openModal('accessibility')} />
+                <FooterLink icon={Cookie} label="Cookie Policy" onClick={() => openModal('cookies')} />
               </div>
 
               {/* 2. Company & Credibility */}
@@ -61,10 +63,7 @@ const Footer: React.FC = () => {
                   <HelpCircle className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
                   <span>Frequently Asked Questions</span>
                 </a>
-                <a href="#pricing" className="flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors group text-left">
-                  <CreditCard className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
-                  <span>Make an Offer</span>
-                </a>
+                <FooterLink icon={ShoppingCart} label="Buy Now / Offer" onClick={() => openModal('offer')} />
               </div>
 
             </div>
