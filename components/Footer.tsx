@@ -16,30 +16,48 @@ const Footer: React.FC = () => {
   };
 
   // Helper for link styling
+  // Increased brightness for text (text-gray-100) and added drop-shadow for legibility against image
+  // Changed icon color to gold/80 for better visibility on dark background
   const FooterLink = ({ icon: Icon, label, onClick }: { icon: React.ComponentType<any>, label: string, onClick: () => void }) => (
-    <button onClick={onClick} className="flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors group text-left">
-      <Icon className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
-      <span>{label}</span>
+    <button onClick={onClick} className="flex items-center gap-3 text-sm text-gray-100 hover:text-gold transition-colors group text-left py-1">
+      <Icon className="w-4 h-4 text-gold/80 group-hover:text-gold transition-colors flex-shrink-0" />
+      <span className="font-medium drop-shadow-sm tracking-wide">{label}</span>
     </button>
   );
 
+  // Luxury Basement Background - Direct Image Link
+  const BG_IMAGE = "https://i.ibb.co/49hB8Z3/basement.jpg";
+
   return (
     <>
-      <footer className="bg-secondary text-gray-400 py-16 pb-24 md:pb-16 border-t border-gray-800 font-sans">
-        <div className="container mx-auto px-4">
+      <footer className="relative bg-secondary text-gray-200 py-16 pb-24 md:pb-16 border-t border-gray-800 font-sans overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${BG_IMAGE})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        
+        {/* Vignette Overlay: Adjusted to 75% opacity (bg-black/75) to make basement clearer while keeping text legible */}
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-[1px] z-0" />
+
+        <div className="container relative z-10 mx-auto px-4">
           <div className="flex flex-col items-center">
             <img 
               src="https://i.ibb.co/gbY4JfYQ/classic-homes-remodeling-logo.png" 
               alt="Classic Homes Remodeling" 
-              className="h-14 mb-10 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+              className="h-16 mb-12 drop-shadow-2xl"
             />
 
             {/* Footer Navigation Grid - Aligned with PDF Categories */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-10 w-full max-w-5xl mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10 w-full max-w-6xl mb-16 px-4 md:px-0">
               
               {/* 1. Legal & Trust */}
-              <div className="flex flex-col items-center md:items-start space-y-5">
-                <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Legal & Trust</h4>
+              <div className="flex flex-col items-center md:items-start space-y-4">
+                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-sm tracking-wide">Legal & Trust</h4>
                 <FooterLink icon={Shield} label="Privacy Policy" onClick={() => openModal('privacy')} />
                 <FooterLink icon={FileText} label="Terms of Service" onClick={() => openModal('terms')} />
                 <FooterLink icon={AlertTriangle} label="Disclaimer" onClick={() => openModal('disclaimer')} />
@@ -48,32 +66,32 @@ const Footer: React.FC = () => {
               </div>
 
               {/* 2. Company & Credibility */}
-              <div className="flex flex-col items-center md:items-start space-y-5">
-                <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Company & Credibility</h4>
+              <div className="flex flex-col items-center md:items-start space-y-4">
+                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-sm tracking-wide">Company & Credibility</h4>
                 <FooterLink icon={Info} label="About ClassicHomes" onClick={() => openModal('about')} />
                 <FooterLink icon={Award} label="Our Mission" onClick={() => openModal('mission')} />
                 <FooterLink icon={Mail} label="Contact Broker" onClick={() => openModal('contact')} />
               </div>
 
               {/* 3. Transaction & Support */}
-              <div className="flex flex-col items-center md:items-start space-y-5">
-                <h4 className="text-white font-serif font-bold text-lg border-b-2 border-gold/50 pb-2 mb-2 inline-block">Transaction & Support</h4>
+              <div className="flex flex-col items-center md:items-start space-y-4">
+                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-sm tracking-wide">Transaction & Support</h4>
                 <FooterLink icon={Server} label="Domain Services / Transfer" onClick={() => openModal('services')} />
-                <a href="#faqs" className="flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors group text-left">
-                  <HelpCircle className="w-4 h-4 text-gray-600 group-hover:text-gold transition-colors" />
-                  <span>Frequently Asked Questions</span>
+                <a href="#faqs" className="flex items-center gap-3 text-sm text-gray-100 hover:text-gold transition-colors group text-left py-1">
+                  <HelpCircle className="w-4 h-4 text-gold/80 group-hover:text-gold transition-colors flex-shrink-0" />
+                  <span className="font-medium drop-shadow-sm tracking-wide">Frequently Asked Questions</span>
                 </a>
                 <FooterLink icon={ShoppingCart} label="Buy Now / Offer" onClick={() => openModal('offer')} />
               </div>
 
             </div>
 
-            <div className="w-full max-w-2xl border-t border-gray-800 pt-8 text-center">
-               <p className="text-xs text-gray-500 leading-relaxed">
+            <div className="w-full max-w-3xl border-t border-white/10 pt-8 text-center relative">
+               <p className="text-xs text-gray-300 leading-relaxed font-medium drop-shadow-md">
                 © {new Date().getFullYear()} Classic Homes Remodeling. All rights reserved. <br/>
                 This site is a premium digital asset sales landing page. We are not affiliated with any physical construction firm. <br/>
-                <span className="text-gray-400 mt-2 block">
-                  Secure Transaction Facilitation by <strong className="text-gray-300">Escrow.com</strong>
+                <span className="text-gray-200 mt-3 block text-sm">
+                  Secure Transaction Facilitation by <strong className="text-white">Escrow.com</strong>
                 </span>
               </p>
             </div>
@@ -110,7 +128,7 @@ const Footer: React.FC = () => {
             <div className="p-6 border-t border-gray-100 bg-gray-50 rounded-b-2xl flex justify-end sticky bottom-0 z-10">
               <button 
                 onClick={closeModal}
-                className="px-6 py-2 bg-primary text-white rounded-lg font-bold hover:bg-slate-800 transition-colors"
+                className="px-6 py-2 bg-primary text-white rounded-lg font-bold hover:bg-slate-800 transition-colors focus:ring-2 focus:ring-gold"
               >
                 Close
               </button>

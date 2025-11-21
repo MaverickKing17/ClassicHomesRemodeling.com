@@ -17,7 +17,7 @@ const ComparableSales: React.FC = () => {
         <div className="overflow-x-auto pb-4">
           <div className="min-w-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {sales.map((sale, idx) => (
-              <div key={idx} className="border border-gray-700 rounded-lg p-6 bg-[#1E1E1E] hover:border-gold transition-colors shadow-lg group">
+              <div key={idx} className="border border-gold/40 rounded-lg p-6 bg-[#1E1E1E] hover:border-gold transition-colors shadow-lg group">
                 <div className="text-sm text-gray-400 mb-2 font-mono uppercase tracking-wide">{sale.year} • {sale.industry}</div>
                 <div className="text-xl font-bold text-[#E0E0E0] mb-2">{sale.domain}</div>
                 <div className="text-2xl font-serif text-gold font-bold group-hover:text-gold-light transition-colors">

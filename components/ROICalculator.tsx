@@ -29,7 +29,7 @@ const ROICalculator: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+              <div className="p-6 bg-white/5 rounded-xl border border-gold/30 hover:border-gold/50 transition-colors">
                 <div className="mb-2 text-gray-400 text-xs uppercase tracking-wide">Potential Yearly Revenue</div>
                 <div className="text-3xl md:text-4xl font-bold text-gold font-serif">
                   ${yearlyRevenue.toLocaleString()}
@@ -39,7 +39,7 @@ const ROICalculator: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-6 bg-white/5 rounded-xl border border-white/10">
+              <div className="p-6 bg-white/5 rounded-xl border border-gold/30 hover:border-gold/50 transition-colors">
                 <div className="mb-2 text-gray-400 text-xs uppercase tracking-wide">Leads to Break Even</div>
                 <div className="text-3xl md:text-4xl font-bold text-white font-serif">
                   {breakEvenLeads}

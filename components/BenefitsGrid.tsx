@@ -107,7 +107,7 @@ const BenefitsGrid: React.FC = () => {
           {benefits.map((benefit, idx) => (
             <div 
               key={idx} 
-              className="bg-[#1E1E1E] p-8 rounded-xl shadow-2xl transition-all duration-300 border border-gray-700 hover:border-gold/50 group transform hover:-translate-y-2"
+              className="bg-[#1E1E1E] p-8 rounded-xl shadow-2xl transition-all duration-300 border border-gold/40 hover:border-gold group transform hover:-translate-y-2"
             >
               <div className="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors border border-white/10">
                 {/* Solid/Filled Icon Style using fill-current and heavier stroke where appropriate */}
