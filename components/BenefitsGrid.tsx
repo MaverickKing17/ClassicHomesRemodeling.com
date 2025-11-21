@@ -1,38 +1,38 @@
 import React from 'react';
-import { TrendingUp, Search, Users, Award, MousePointerClick, DollarSign, Facebook, Twitter, Linkedin, Share2 } from 'lucide-react';
+import { Sparkles, Cpu, BarChart3, CreditCard, Wifi, MapPin, Facebook, Twitter, Linkedin, Share2 } from 'lucide-react';
 import { Benefit } from '../types';
 
 const BenefitsGrid: React.FC = () => {
   const benefits: Benefit[] = [
     {
-      title: "Instant Authority",
-      description: "Position your brand as the market leader instantly with a name that defines the industry.",
-      icon: Award
+      title: "GenAI Visualization Suite",
+      description: "Deploy a 'Text-to-Design' platform where homeowners upload photos and instantly visualize luxury remodels using Generative AI.",
+      icon: Sparkles
     },
     {
-      title: "SEO Dominance",
-      description: "Exact match keywords 'Classic Homes Remodeling' drive organic traffic worth thousands monthly.",
-      icon: Search
+      title: "AI-Powered Contractor Marketplace",
+      description: "Launch a smart bidding engine that uses machine learning to match homeowners with pre-vetted contractors based on budget and scope.",
+      icon: Cpu
     },
     {
-      title: "Trust & Credibility",
-      description: "Premium .com domains convey stability and luxury, increasing conversion rates by up to 40%.",
-      icon: Users
+      title: "Predictive Construction SaaS",
+      description: "Capture the market with a project management platform offering automated 'AI Takeoffs,' predictive budgeting, and timeline forecasting.",
+      icon: BarChart3
     },
     {
-      title: "Lower Ad Costs",
-      description: "Higher Quality Score in Google Ads leads to significantly lower CPC for renovation keywords.",
-      icon: TrendingUp
+      title: "FinTech Renovation Portal",
+      description: "Establish a specialized lending hub using algorithmic risk assessment to approve high-ticket home improvement loans in minutes.",
+      icon: CreditCard
     },
     {
-      title: "Type-in Traffic",
-      description: "Capture customers who bypass search engines and type the service directly into their browser.",
-      icon: MousePointerClick
+      title: "Smart Home Integration Hub",
+      description: "Become the authority on IoT and Smart Home retrofits—the fastest-growing sector in modern luxury renovation.",
+      icon: Wifi
     },
     {
-      title: "Asset Appreciation",
-      description: "Premium digital real estate historically appreciates, serving as a secure digital asset.",
-      icon: DollarSign
+      title: "The 'Angi' Killer (Local Dominance)",
+      description: "Dominate local SEO with an automated directory that aggregates reviews, pricing, and permits for every contractor in high-value zip codes.",
+      icon: MapPin
     }
   ];
 
@@ -61,7 +61,7 @@ const BenefitsGrid: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-2xl">Why This Domain Wins</h2>
           <p className="text-white text-lg font-medium drop-shadow-2xl mb-8">
             In the high-ticket remodeling industry, trust is everything. 
-            <span className="font-bold text-gold"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a competitive moat.
+            <span className="font-bold text-gold"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a Future-Ready Tech Platform.
           </p>
 
           {/* Social Sharing Buttons */}
@@ -102,18 +102,19 @@ const BenefitsGrid: React.FC = () => {
           </div>
         </div>
 
+        {/* Updated Grid for AI & Tech Business Models */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, idx) => (
             <div 
               key={idx} 
-              className="bg-white p-8 rounded-xl shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gold/50 group transform hover:-translate-y-2"
+              className="bg-[#1E1E1E] p-8 rounded-xl shadow-2xl transition-all duration-300 border border-gray-700 hover:border-gold/50 group transform hover:-translate-y-2"
             >
-              <div className="w-14 h-14 bg-gray-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors border border-gray-100">
+              <div className="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors border border-white/10">
                 {/* Solid/Filled Icon Style using fill-current and heavier stroke where appropriate */}
-                <benefit.icon className="w-7 h-7 text-primary fill-current stroke-[1.5]" />
+                <benefit.icon className="w-7 h-7 text-gold fill-current stroke-[1.5]" />
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{benefit.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+              <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+              <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>
