@@ -18,15 +18,11 @@
     "moduleDetection": "force",
     "allowJs": true,
     "jsx": "react-jsx",
-    
-    /* FIX: Point base to root and map @ to src */
-    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "./*"
       ]
     },
-    
     "allowImportingTsExtensions": true,
     "noEmit": true
   }

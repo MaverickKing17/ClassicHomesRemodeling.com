@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
 import FloatingCTAButton from './components/FloatingCTAButton';
 import ExitIntentModal from './components/ExitIntentModal';
+import FinalCTA from './components/FinalCTA';
 
 function App() {
   return (
@@ -25,16 +26,7 @@ function App() {
         <ROICalculator />
         <PurchaseOptions />
         <FAQs />
-        <div className="bg-surface py-20 px-4 text-center">
-          <h2 className="text-3xl font-serif font-bold mb-6">Don't Let Your Competitor Buy This.</h2>
-          <p className="mb-8 text-gray-600">The auction timer is ticking. Make your move.</p>
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="bg-primary text-white font-bold py-4 px-12 rounded-lg shadow-lg hover:bg-slate-800 transition-colors inline-block h-touch"
-          >
-            Make Final Offer
-          </button>
-        </div>
+        <FinalCTA />
         <Footer />
       </div>
 
