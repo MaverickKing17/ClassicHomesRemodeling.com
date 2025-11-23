@@ -9,29 +9,29 @@ const ComparableSales: React.FC = () => {
         </h2>
         
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto text-center">
-          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors">
-            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#D4AF37] break-words">
+          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/20">
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D4AF37]">
               HomeRemodeling.com
             </p>
-            <p className="text-3xl md:text-4xl font-serif font-medium text-gray-900">
+            <p className="text-2xl md:text-3xl font-serif font-medium text-gray-900">
               $325,000
             </p>
           </div>
           
-          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors">
-            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#D4AF37] break-words">
+          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/20">
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D4AF37]">
               LuxuryHomes.com
             </p>
-            <p className="text-3xl md:text-4xl font-serif font-medium text-gray-900">
+            <p className="text-2xl md:text-3xl font-serif font-medium text-gray-900">
               $460,000
             </p>
           </div>
           
-          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors">
-            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#D4AF37] break-words">
+          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/20">
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D4AF37]">
               KitchenRemodel.com
             </p>
-            <p className="text-3xl md:text-4xl font-serif font-medium text-gray-900">
+            <p className="text-2xl md:text-3xl font-serif font-medium text-gray-900">
               $689,000
             </p>
           </div>
