@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Cpu, BarChart3, CreditCard, Wifi, MapPin, Facebook, Twitter, Linkedin, Share2 } from 'lucide-react';
+import { Sparkles, Cpu, BarChart3, CreditCard, Wifi, MapPin } from 'lucide-react';
 import { Benefit } from '../types';
 
 const BenefitsGrid: React.FC = () => {
@@ -38,8 +38,6 @@ const BenefitsGrid: React.FC = () => {
 
   // Luxury Living Room Background - Direct image link
   const BG_IMAGE = "https://i.ibb.co/BHzWjHpW/luxury-living-room.jpg";
-  const DOMAIN_URL = "https://classichomesremodeling.com";
-  const SHARE_TEXT = "Dominate the luxury renovation market with the category-defining asset: ClassicHomesRemodeling.com";
 
   return (
     <section className="py-24 relative bg-primary" id="benefits">
@@ -63,43 +61,6 @@ const BenefitsGrid: React.FC = () => {
             In the high-ticket remodeling industry, trust is everything. 
             <span className="font-bold text-gold"> ClassicHomesRemodeling.com</span> isn't just a URL; it's a Future-Ready Tech Platform.
           </p>
-
-          {/* Social Sharing Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-3 duration-700 delay-100">
-            <span className="text-white/80 text-sm font-medium uppercase tracking-widest mr-2 flex items-center gap-2 drop-shadow-md">
-              <Share2 className="w-4 h-4" /> Share Asset:
-            </span>
-            
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(DOMAIN_URL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 rounded-full text-white hover:bg-gold hover:text-primary transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-gold hover:-translate-y-1 shadow-lg group"
-              aria-label="Share on Facebook"
-            >
-              <Facebook className="w-5 h-5 fill-current group-hover:scale-110 transition-transform" />
-            </a>
-            
-            <a
-              href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(DOMAIN_URL)}&text=${encodeURIComponent(SHARE_TEXT)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 rounded-full text-white hover:bg-gold hover:text-primary transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-gold hover:-translate-y-1 shadow-lg group"
-              aria-label="Share on Twitter"
-            >
-              <Twitter className="w-5 h-5 fill-current group-hover:scale-110 transition-transform" />
-            </a>
-            
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(DOMAIN_URL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 rounded-full text-white hover:bg-gold hover:text-primary transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-gold hover:-translate-y-1 shadow-lg group"
-              aria-label="Share on LinkedIn"
-            >
-              <Linkedin className="w-5 h-5 fill-current group-hover:scale-110 transition-transform" />
-            </a>
-          </div>
         </div>
 
         {/* Updated Grid for AI & Tech Business Models */}
