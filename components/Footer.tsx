@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Shield, FileText, AlertTriangle, Info, Award, Mail, Server, HelpCircle, CreditCard, Eye, Cookie, ShoppingCart } from 'lucide-react';
+import { X, Shield, FileText, AlertTriangle, Info, Award, Server, HelpCircle, ShoppingCart, Eye, Cookie } from 'lucide-react';
 import { footerPages, FooterPageKey } from './FooterPages';
 
 const Footer: React.FC = () => {
@@ -16,8 +16,6 @@ const Footer: React.FC = () => {
   };
 
   // Helper for link styling
-  // Increased brightness for text (text-gray-100) and added drop-shadow for legibility against image
-  // Changed icon color to gold/80 for better visibility on dark background
   const FooterLink = ({ icon: Icon, label, onClick }: { icon: React.ComponentType<any>, label: string, onClick: () => void }) => (
     <button onClick={onClick} className="flex items-center gap-3 text-sm text-gray-100 hover:text-gold transition-colors group text-left py-1">
       <Icon className="w-4 h-4 text-gold/80 group-hover:text-gold transition-colors flex-shrink-0" />
@@ -41,7 +39,7 @@ const Footer: React.FC = () => {
           }}
         />
         
-        {/* Vignette Overlay: Adjusted to 75% opacity (bg-black/75) to make basement clearer while keeping text legible */}
+        {/* Vignette Overlay: 75% opacity to show image details */}
         <div className="absolute inset-0 bg-black/75 backdrop-blur-[1px] z-0" />
 
         <div className="container relative z-10 mx-auto px-4">
@@ -68,9 +66,9 @@ const Footer: React.FC = () => {
               {/* 2. Company & Credibility */}
               <div className="flex flex-col items-center md:items-start space-y-4">
                 <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-sm tracking-wide">Company & Credibility</h4>
-                <FooterLink icon={Info} label="About ClassicHomes" onClick={() => openModal('about')} />
+                <FooterLink icon={Info} label="About the Seller" onClick={() => openModal('about')} />
                 <FooterLink icon={Award} label="Our Mission" onClick={() => openModal('mission')} />
-                <FooterLink icon={Mail} label="Contact Broker" onClick={() => openModal('contact')} />
+                {/* Contact Broker removed as requested */}
               </div>
 
               {/* 3. Transaction & Support */}

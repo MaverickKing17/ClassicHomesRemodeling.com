@@ -1,8 +1,8 @@
 import React from 'react';
-import { Shield, AlertTriangle, Info, FileText, Mail, Server, Award, Eye, Cookie, ShoppingCart } from 'lucide-react';
+import { Shield, AlertTriangle, Info, FileText, Server, Award, Eye, Cookie, ShoppingCart } from 'lucide-react';
 import OfferForm from './OfferForm';
 
-export type FooterPageKey = 'privacy' | 'terms' | 'disclaimer' | 'about' | 'mission' | 'contact' | 'services' | 'accessibility' | 'cookies' | 'offer';
+export type FooterPageKey = 'privacy' | 'terms' | 'disclaimer' | 'about' | 'mission' | 'services' | 'accessibility' | 'cookies' | 'offer';
 
 interface PageContent {
   title: string;
@@ -70,33 +70,33 @@ export const footerPages: Record<FooterPageKey, PageContent> = {
       <div className="space-y-4 text-gray-600 text-base leading-relaxed">
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
           <p className="font-bold text-yellow-800">Important Notice</p>
-          <p className="text-yellow-700 text-sm">We are a digital asset holding company, not a construction firm.</p>
+          <p className="text-yellow-700 text-sm">Seller is an individual entrepreneur, not a construction firm or brokerage.</p>
         </div>
         <p>
           <strong>Not a Construction Entity:</strong> We are selling the premium domain name <em>classichomesremodeling.com</em>. We are not a construction, architecture, or remodeling firm and do not provide physical renovation services. Any images used on this site are for illustrative purposes to demonstrate the branding potential of the domain.
         </p>
         <p>
-          <strong>Valuation:</strong> Any mention of "ROI", "Value", "Appraisal", or "Traffic" is based on industry averages, keyword search volume estimates, and comparable sales data. Actual results from using this domain will vary based on the buyer's business execution and marketing strategy.
+          <strong>Individual Seller:</strong> This asset is owned and sold by an individual investor and technology entrepreneur. It is not held by a digital asset holding company or a real estate brokerage.
         </p>
         <p>
-          <strong>No Affiliation:</strong> This domain is sold as an independent asset and is not affiliated with any existing business entity unless explicitly stated in the final sales agreement.
+          <strong>Valuation:</strong> Any mention of "ROI", "Value", "Appraisal", or "Traffic" is based on industry averages, keyword search volume estimates, and comparable sales data (e.g., HomeRemodeling.com). Actual results will vary based on the buyer's execution.
         </p>
       </div>
     )
   },
   about: {
-    title: "About ClassicHomes",
+    title: "About the Seller",
     icon: Info,
     content: (
       <div className="space-y-4 text-gray-600 text-base leading-relaxed">
         <p>
-          <strong>Classic Homes</strong> is a boutique digital real estate portfolio specializing in high-value, industry-defining domain names for the construction and luxury home improvement sectors.
+          I am a <strong>tech-savvy entrepreneur</strong> and digital asset investor, not a large agency or brokerage firm.
         </p>
         <p>
-          We acquire, curate, and release category-killing domains that allow elite contractors and builders to bypass decades of brand building and establish immediate market authority.
+          I acquire high-leverage domains that have the potential to define a category. <em>ClassicHomesRemodeling.com</em> was selected for its precise keyword match and authority in the luxury renovation sector.
         </p>
         <p>
-          Our team consists of domain brokers and SEO experts who understand the immense leverage a "Type-In" premium .com domain provides to a growing enterprise. We have successfully brokered over $2M in digital assets since 2018.
+          My goal is to transfer this asset directly to a visionary builder or creative entrepreneur who can utilize it to dominate their local market. By selling directly, I ensure a smooth, transparent transaction without unnecessary middleman fees.
         </p>
       </div>
     )
@@ -118,42 +118,6 @@ export const footerPages: Record<FooterPageKey, PageContent> = {
         <p>
           We aren't just selling a domain; we are handing over the keys to online market dominance. We ensure this asset goes to a serious operator who understands the value of a premium brand.
         </p>
-      </div>
-    )
-  },
-  contact: {
-    title: "Contact Us",
-    icon: Mail,
-    content: (
-      <div className="space-y-4 text-gray-600 text-base leading-relaxed">
-        <p>
-          For serious inquiries regarding the acquisition of this asset, please use the primary "Make an Offer" form on the homepage.
-        </p>
-        <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
-          <h4 className="font-bold text-primary mb-4 text-lg border-b border-gray-200 pb-2">Direct Inquiries</h4>
-          <div className="space-y-3">
-            <p className="flex items-center justify-between">
-              <span className="font-medium">Email:</span> 
-              <span className="text-primary font-mono select-all">acquisitions@classichomesremodeling.com</span>
-            </p>
-            <p className="flex items-center justify-between">
-              <span className="font-medium">Phone:</span> 
-              <span className="text-primary font-mono select-all">+1 (555) 019-2834</span>
-            </p>
-            <p className="flex items-center justify-between">
-              <span className="font-medium">Hours:</span> 
-              <span className="text-primary">Mon-Fri, 9AM - 6PM EST</span>
-            </p>
-          </div>
-        </div>
-        <p className="text-sm text-gray-500 italic mt-4">
-          *Please note: We receive a high volume of inquiries. Offers submitted through the official form take priority over general email correspondence.
-        </p>
-        <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gold font-bold hover:underline">
-            Go to Make an Offer Form
-          </button>
-        </div>
       </div>
     )
   },
@@ -254,23 +218,35 @@ export const footerPages: Record<FooterPageKey, PageContent> = {
     icon: ShoppingCart,
     content: (
       <div className="space-y-6">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
            <p className="text-gray-600">
              You are initiating a secure acquisition process for the digital asset: <br/>
              <span className="font-bold text-primary text-lg">classichomesremodeling.com</span>
            </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
-             <div className="text-xs text-gray-500 uppercase font-bold mb-1">Buy It Now Price</div>
-             <div className="text-2xl font-serif text-gold font-bold">$25,000</div>
-             <div className="text-xs text-gray-500 mt-1">Single Payment via Escrow.com</div>
+        {/* 3 Purchase Options Grid - Matching Main Page */}
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
+           {/* Option 1: Lease */}
+          <div className="border border-gray-200 rounded-lg p-3 bg-white hover:border-gold/50 transition-colors">
+             <div className="text-[10px] text-gray-500 uppercase font-bold mb-1">Lease-to-Own</div>
+             <div className="text-xl font-serif text-primary font-bold">$1,500<span className="text-xs text-gray-400 font-sans font-normal">/mo</span></div>
+             <div className="text-[10px] text-gray-500 mt-1">Cancel anytime</div>
           </div>
-          <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
-             <div className="text-xs text-gray-500 uppercase font-bold mb-1">Lease-to-Own</div>
-             <div className="text-2xl font-serif text-gold font-bold">$1,500<span className="text-sm text-gray-400 font-sans font-normal">/mo</span></div>
-             <div className="text-xs text-gray-500 mt-1">Cancel anytime. Own it in ~18 months.</div>
+          
+           {/* Option 2: Installment */}
+          <div className="border border-gray-200 rounded-lg p-3 bg-white hover:border-gold/50 transition-colors">
+             <div className="text-[10px] text-gray-500 uppercase font-bold mb-1">Broker Installment</div>
+             <div className="text-xl font-serif text-primary font-bold">$8,000<span className="text-xs text-gray-400 font-sans font-normal"> down</span></div>
+             <div className="text-[10px] text-gray-500 mt-1">12 months @ 0%</div>
+          </div>
+
+           {/* Option 3: Outright (Best Value) */}
+          <div className="border-2 border-gold/30 rounded-lg p-3 bg-gold/5 hover:border-gold transition-colors relative">
+             <div className="absolute top-0 right-0 bg-gold text-primary text-[9px] font-bold px-2 py-0.5 rounded-bl-md">BEST VALUE</div>
+             <div className="text-[10px] text-gray-500 uppercase font-bold mb-1">Outright Purchase</div>
+             <div className="text-xl font-serif text-gold font-bold">Make Offer</div>
+             <div className="text-[10px] text-gray-500 mt-1">Instant Ownership</div>
           </div>
         </div>
 

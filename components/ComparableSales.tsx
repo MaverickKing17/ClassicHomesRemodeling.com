@@ -9,7 +9,8 @@ const ComparableSales: React.FC = () => {
         </h2>
         
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto text-center">
-          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/20">
+          {/* Card 1 */}
+          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/40 shadow-sm">
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D4AF37]">
               HomeRemodeling.com
             </p>
@@ -18,7 +19,8 @@ const ComparableSales: React.FC = () => {
             </p>
           </div>
           
-          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/20">
+          {/* Card 2 */}
+          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/40 shadow-sm">
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D4AF37]">
               LuxuryHomes.com
             </p>
@@ -27,7 +29,8 @@ const ComparableSales: React.FC = () => {
             </p>
           </div>
           
-          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/20">
+          {/* Card 3 */}
+          <div className="space-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors border border-transparent hover:border-gold/40 shadow-sm">
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#D4AF37]">
               KitchenRemodel.com
             </p>
@@ -38,7 +41,7 @@ const ComparableSales: React.FC = () => {
         </div>
 
         <p className="text-center text-gray-400 text-sm mt-16 italic">
-          *Publicly reported sales data for category-defining domains.
+          *Publicly reported sales data for category-defining domains in the home improvement sector.
         </p>
       </div>
     </section>
