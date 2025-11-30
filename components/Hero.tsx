@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import HeroVideoBackground from './HeroVideoBackground';
-import CountdownTimer from './CountdownTimer';
 import OfferForm from './OfferForm';
 
 const Hero: React.FC = () => {
@@ -38,12 +37,10 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-200 max-w-xl mb-6 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-200 max-w-xl mb-8 font-light leading-relaxed">
             Own the category-defining domain for high-end home renovations. 
             Establish instant credibility, dominate search results, and capture the premium market.
           </p>
-
-          <CountdownTimer />
 
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm font-semibold text-gold tracking-widest uppercase mb-8 lg:mb-0">
             <span className="flex items-center gap-1">
