@@ -63,8 +63,8 @@ const PurchaseOptions: React.FC = () => {
         }}
       />
       
-      {/* Vignette Overlay: Dark edges for text contrast, Transparent center for maximum image clarity */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/0 to-primary/95 z-0" />
+      {/* Vignette Overlay: Reduced opacity (80%) on edges for clearer kitchen visual, transparent center */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/0 to-primary/80 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">

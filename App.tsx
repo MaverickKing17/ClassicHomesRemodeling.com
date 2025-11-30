@@ -10,7 +10,6 @@ import FAQs from './components/FAQs';
 import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
 import FloatingCTAButton from './components/FloatingCTAButton';
-import ExitIntentModal from './components/ExitIntentModal';
 import FinalCTA from './components/FinalCTA';
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
 
       <StickyCTA />
       <FloatingCTAButton />
-      <ExitIntentModal />
     </main>
   );
 }

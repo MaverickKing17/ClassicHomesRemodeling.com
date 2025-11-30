@@ -17,9 +17,9 @@ const Footer: React.FC = () => {
 
   // Helper for link styling
   const FooterLink = ({ icon: Icon, label, onClick }: { icon: React.ComponentType<any>, label: string, onClick: () => void }) => (
-    <button onClick={onClick} className="flex items-center gap-3 text-sm text-gray-100 hover:text-gold transition-colors group text-left py-1">
-      <Icon className="w-4 h-4 text-gold/80 group-hover:text-gold transition-colors flex-shrink-0" />
-      <span className="font-medium drop-shadow-sm tracking-wide">{label}</span>
+    <button onClick={onClick} className="flex items-center gap-3 text-sm text-gray-100 hover:text-gold transition-colors group text-left py-1 drop-shadow-sm">
+      <Icon className="w-4 h-4 text-gold group-hover:text-gold-light transition-colors flex-shrink-0 drop-shadow-sm" />
+      <span className="font-medium tracking-wide">{label}</span>
     </button>
   );
 
@@ -39,8 +39,8 @@ const Footer: React.FC = () => {
           }}
         />
         
-        {/* Vignette Overlay: 75% opacity to show image details */}
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-[1px] z-0" />
+        {/* Vignette Overlay: Reduced opacity to 60% for clearer background visibility */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[0.5px] z-0" />
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="flex flex-col items-center">
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               
               {/* 1. Legal & Trust */}
               <div className="flex flex-col items-center md:items-start space-y-4">
-                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-sm tracking-wide">Legal & Trust</h4>
+                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-md tracking-wide">Legal & Trust</h4>
                 <FooterLink icon={Shield} label="Privacy Policy" onClick={() => openModal('privacy')} />
                 <FooterLink icon={FileText} label="Terms of Service" onClick={() => openModal('terms')} />
                 <FooterLink icon={AlertTriangle} label="Disclaimer" onClick={() => openModal('disclaimer')} />
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
 
               {/* 2. Company & Credibility */}
               <div className="flex flex-col items-center md:items-start space-y-4">
-                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-sm tracking-wide">Company & Credibility</h4>
+                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-md tracking-wide">Company & Credibility</h4>
                 <FooterLink icon={Info} label="About the Seller" onClick={() => openModal('about')} />
                 <FooterLink icon={Award} label="Our Mission" onClick={() => openModal('mission')} />
                 {/* Contact Broker removed as requested */}
@@ -73,22 +73,22 @@ const Footer: React.FC = () => {
 
               {/* 3. Transaction & Support */}
               <div className="flex flex-col items-center md:items-start space-y-4">
-                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-sm tracking-wide">Transaction & Support</h4>
+                <h4 className="text-white font-serif font-bold text-xl border-b-2 border-gold pb-2 mb-4 inline-block shadow-md tracking-wide">Transaction & Support</h4>
                 <FooterLink icon={Server} label="Domain Services / Transfer" onClick={() => openModal('services')} />
-                <a href="#faqs" className="flex items-center gap-3 text-sm text-gray-100 hover:text-gold transition-colors group text-left py-1">
-                  <HelpCircle className="w-4 h-4 text-gold/80 group-hover:text-gold transition-colors flex-shrink-0" />
-                  <span className="font-medium drop-shadow-sm tracking-wide">Frequently Asked Questions</span>
+                <a href="#faqs" className="flex items-center gap-3 text-sm text-gray-100 hover:text-gold transition-colors group text-left py-1 drop-shadow-sm">
+                  <HelpCircle className="w-4 h-4 text-gold group-hover:text-gold-light transition-colors flex-shrink-0 drop-shadow-sm" />
+                  <span className="font-medium tracking-wide">Frequently Asked Questions</span>
                 </a>
                 <FooterLink icon={ShoppingCart} label="Buy Now / Offer" onClick={() => openModal('offer')} />
               </div>
 
             </div>
 
-            <div className="w-full max-w-3xl border-t border-white/10 pt-8 text-center relative">
-               <p className="text-xs text-gray-300 leading-relaxed font-medium drop-shadow-md">
+            <div className="w-full max-w-3xl border-t border-white/20 pt-8 text-center relative">
+               <p className="text-xs text-white leading-relaxed font-medium drop-shadow-lg shadow-black">
                 © {new Date().getFullYear()} Classic Homes Remodeling. All rights reserved. <br/>
                 This site is a premium digital asset sales landing page. We are not affiliated with any physical construction firm. <br/>
-                <span className="text-gray-200 mt-3 block text-sm">
+                <span className="text-gray-100 mt-3 block text-sm">
                   Secure Transaction Facilitation by <strong className="text-white">Escrow.com</strong>
                 </span>
               </p>
