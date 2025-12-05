@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Play, X, CheckCircle } from 'lucide-react';
 import HeroVideoBackground from './HeroVideoBackground';
 import OfferForm from './OfferForm';
 
 const Hero: React.FC = () => {
   const [headline, setHeadline] = useState("The Authority in Luxury Remodeling");
+  const [showVideo, setShowVideo] = useState(false);
+
+  // Video URL matches the background video for consistency, 
+  // but in a real scenario, this would be the version with Voiceover/Audio.
+  const VIDEO_URL = "https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-corridor-with-columns-31892-large.mp4";
   
   useEffect(() => {
     // Simple client-side A/B test / Rotation
@@ -42,13 +48,29 @@ const Hero: React.FC = () => {
             Establish instant credibility, dominate search results, and capture the premium market.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm font-semibold text-gold tracking-widest uppercase mb-8 lg:mb-0">
-            <span className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-green-500"></span> Verified Available
-            </span>
-            <span className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span> Instant Transfer
-            </span>
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start items-center mb-8 lg:mb-0">
+            {/* Watch Video CTA */}
+            <button 
+              onClick={() => setShowVideo(true)}
+              className="flex items-center gap-3 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md rounded-full transition-all group"
+            >
+              <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                <Play className="w-5 h-5 text-primary fill-current ml-1" />
+              </div>
+              <span className="text-white font-bold tracking-wide uppercase text-sm">Watch Brand Video</span>
+            </button>
+
+            {/* Trust Badges */}
+            <div className="flex gap-4 text-xs font-semibold text-gold tracking-widest uppercase border-l border-white/20 pl-4 ml-2">
+              <div className="flex flex-col gap-1">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle className="w-3 h-3" /> Verified Available
+                </span>
+                <span className="flex items-center gap-1.5 opacity-80">
+                  <CheckCircle className="w-3 h-3" /> Instant Transfer
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -56,6 +78,28 @@ const Hero: React.FC = () => {
            <OfferForm variant="hero" />
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl animate-in fade-in duration-300">
+          <button 
+            onClick={() => setShowVideo(false)}
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+            aria-label="Close Video"
+          >
+            <X className="w-10 h-10" />
+          </button>
+          
+          <div className="w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
+            <video 
+              src={VIDEO_URL} 
+              className="w-full h-full object-cover"
+              controls
+              autoPlay
+            />
+          </div>
+        </div>
+      )}
     </header>
   );
 };
