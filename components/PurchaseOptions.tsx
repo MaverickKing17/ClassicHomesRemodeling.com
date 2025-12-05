@@ -8,8 +8,8 @@ const PurchaseOptions: React.FC = () => {
       title: "Lease to Own",
       price: "$1,500",
       features: [
-        "Low initial capital outlay",
-        "20% down payment",
+        "Low Barrier Entry",
+        "Defined Initial Lease Fee Required",
         "Payments apply to purchase",
         "Immediate domain usage",
         "Cancel anytime option"
@@ -20,21 +20,21 @@ const PurchaseOptions: React.FC = () => {
       title: "Broker-Assisted Installment",
       price: "$8,000",
       features: [
-        "12-month term",
-        "0% Interest financing",
-        "Secure Escrow Service",
-        "Ownership transfer on completion",
-        "Predictable monthly cost"
+        "0% Interest Financing",
+        "12-Month: $2,666.67/mo",
+        "24-Month: $1,333.33/mo",
+        "36-Month: $888.89/mo",
+        "Secure Escrow Service"
       ],
       isPrimary: false
     },
     {
-      title: "Outright Acquisition (Buy It Now)",
-      price: "Make Offer",
+      title: "Outright Acquisition",
+      price: "$40,000",
       features: [
-        "Instant 100% ownership",
+        "Immediate and Full Ownership Transfer",
         "Secure Escrow.com transfer",
-        "Tax deductible asset",
+        "Capital Asset: Consult CPA for 15-Year Amortization",
         "No monthly payments",
         "Full resale rights immediately"
       ],
@@ -47,8 +47,14 @@ const PurchaseOptions: React.FC = () => {
 
   const getSubtext = (title: string) => {
     if (title.includes('Lease')) return '/month';
-    if (title.includes('Installment')) return ' down pmt';
-    return ' market value';
+    if (title.includes('Installment')) return ' Initial Payment';
+    return ' (OBO)';
+  };
+
+  const getCtaText = (title: string) => {
+    if (title.includes('Installment')) return 'Secure Purchase Plan';
+    if (title.includes('Outright')) return 'Make An Offer';
+    return 'Start Lease';
   };
 
   return (
@@ -75,7 +81,7 @@ const PurchaseOptions: React.FC = () => {
         </div>
 
         {/* Updated Grid to support 3 cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
           {options.map((option, idx) => (
             <div 
               key={idx} 
@@ -87,7 +93,7 @@ const PurchaseOptions: React.FC = () => {
             >
               {option.isPrimary && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-primary font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wider shadow-lg whitespace-nowrap">
-                  Best Value
+                  The Anchor
                 </div>
               )}
 
@@ -104,7 +110,7 @@ const PurchaseOptions: React.FC = () => {
                 <span className={`text-4xl font-serif font-bold ${option.isPrimary ? 'text-gold' : 'text-primary'}`}>
                   {option.price}
                 </span>
-                <span className={`text-sm ${option.isPrimary ? 'text-gray-400' : 'text-gray-500'}`}>
+                <span className={`text-sm block mt-1 ${option.isPrimary ? 'text-gray-400' : 'text-gray-500'}`}>
                   {getSubtext(option.title)}
                 </span>
               </div>
@@ -128,10 +134,17 @@ const PurchaseOptions: React.FC = () => {
                     : 'bg-primary text-white hover:bg-slate-800 shadow-md'
                 }`}
               >
-                {option.isPrimary ? 'Make An Offer' : 'Start Lease'}
+                {getCtaText(option.title)}
               </button>
             </div>
           ))}
+        </div>
+
+        {/* Mandatory Legal Disclaimer */}
+        <div className="max-w-4xl mx-auto text-center border-t border-white/10 pt-8">
+          <p className="text-gray-400 text-xs leading-relaxed">
+            <strong className="text-gray-300">Legal Disclaimer:</strong> Classic Homes Remodeling is selling the domain name asset only. We are not a lender or financial institution. All financing is seller-carried with no credit checks required. 'Lease to Own' and 'Broker-Assisted Installment' plans are subject to specific contract terms facilitated via Escrow.com for buyer and seller protection. The 'Capital Asset' designation is for informational purposes only; buyers must consult their own CPA or tax professional regarding amortization schedules and tax deductibility eligibility under current laws. Prices and availability are subject to change without notice.
+          </p>
         </div>
       </div>
     </section>

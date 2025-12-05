@@ -238,15 +238,15 @@ export const footerPages: Record<FooterPageKey, PageContent> = {
           <div className="border border-gray-200 rounded-lg p-3 bg-white hover:border-gold/50 transition-colors">
              <div className="text-[10px] text-gray-500 uppercase font-bold mb-1">Broker Installment</div>
              <div className="text-xl font-serif text-primary font-bold">$8,000<span className="text-xs text-gray-400 font-sans font-normal"> down</span></div>
-             <div className="text-[10px] text-gray-500 mt-1">12 months @ 0%</div>
+             <div className="text-[10px] text-gray-500 mt-1">0% Financing</div>
           </div>
 
            {/* Option 3: Outright (Best Value) */}
           <div className="border-2 border-gold/30 rounded-lg p-3 bg-gold/5 hover:border-gold transition-colors relative">
-             <div className="absolute top-0 right-0 bg-gold text-primary text-[9px] font-bold px-2 py-0.5 rounded-bl-md">BEST VALUE</div>
+             <div className="absolute top-0 right-0 bg-gold text-primary text-[9px] font-bold px-2 py-0.5 rounded-bl-md">THE ANCHOR</div>
              <div className="text-[10px] text-gray-500 uppercase font-bold mb-1">Outright Purchase</div>
-             <div className="text-xl font-serif text-gold font-bold">Make Offer</div>
-             <div className="text-[10px] text-gray-500 mt-1">Instant Ownership</div>
+             <div className="text-xl font-serif text-gold font-bold">$40,000<span className="text-xs text-gray-400 font-sans font-normal"> (OBO)</span></div>
+             <div className="text-[10px] text-gray-500 mt-1">Full Ownership</div>
           </div>
         </div>
 
