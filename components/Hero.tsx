@@ -7,8 +7,8 @@ const Hero: React.FC = () => {
   const [headline, setHeadline] = useState("The Authority in Luxury Remodeling");
   const [showVideo, setShowVideo] = useState(false);
 
-  // Reliable high-quality luxury interior stock video
-  const VIDEO_URL = "https://videos.pexels.com/video-files/7578544/7578544-uhd_3840_2160_30fps.mp4";
+  // HGTV-Style "7-Star" Luxury Architectural Showcase (4K)
+  const VIDEO_URL = "https://videos.pexels.com/video-files/7578552/7578552-uhd_3840_2160_30fps.mp4";
   
   // Use the same image as the background for the video poster to prevent black screen
   const POSTER_URL = "https://messages-prod.27c852f3500f38c1e7786e2c9ff9e48f.r2.cloudflarestorage.com/cac5669f-fc0b-4f34-80ae-914952152bf0/1764969374787-019af05e-7148-7f6f-a850-0aa5acba235f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=c774f9d56a46165f86a9757e83c2bbc3%2F20251205%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251205T211614Z&X-Amz-Expires=3600&X-Amz-Signature=6f79804798ff2dca1027065f812b18258a319f380a06bf88ea73d0d5a777d1e4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject";
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Video Modal - 7-Star Presentation */}
       {showVideo && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl animate-in fade-in duration-300">
           <button 
@@ -92,7 +92,8 @@ const Hero: React.FC = () => {
             <X className="w-10 h-10" />
           </button>
           
-          <div className="w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
+          {/* Enhanced Container with Gold Glow and Border */}
+          <div className="w-full max-w-6xl aspect-video bg-black rounded-xl overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.3)] border-2 border-gold relative">
             <video 
               src={VIDEO_URL} 
               poster={POSTER_URL}
