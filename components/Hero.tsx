@@ -7,10 +7,12 @@ const Hero: React.FC = () => {
   const [headline, setHeadline] = useState("The Authority in Luxury Remodeling");
   const [showVideo, setShowVideo] = useState(false);
 
-  // Video URL matches the background video for consistency, 
-  // but in a real scenario, this would be the version with Voiceover/Audio.
-  const VIDEO_URL = "https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-corridor-with-columns-31892-large.mp4";
+  // Reliable high-quality luxury interior stock video
+  const VIDEO_URL = "https://videos.pexels.com/video-files/7578544/7578544-uhd_3840_2160_30fps.mp4";
   
+  // Use the same image as the background for the video poster to prevent black screen
+  const POSTER_URL = "https://messages-prod.27c852f3500f38c1e7786e2c9ff9e48f.r2.cloudflarestorage.com/cac5669f-fc0b-4f34-80ae-914952152bf0/1764969374787-019af05e-7148-7f6f-a850-0aa5acba235f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=c774f9d56a46165f86a9757e83c2bbc3%2F20251205%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20251205T211614Z&X-Amz-Expires=3600&X-Amz-Signature=6f79804798ff2dca1027065f812b18258a319f380a06bf88ea73d0d5a777d1e4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject";
+
   useEffect(() => {
     // Simple client-side A/B test / Rotation
     const variants = [
@@ -93,9 +95,11 @@ const Hero: React.FC = () => {
           <div className="w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
             <video 
               src={VIDEO_URL} 
+              poster={POSTER_URL}
               className="w-full h-full object-cover"
               controls
               autoPlay
+              playsInline
             />
           </div>
         </div>
