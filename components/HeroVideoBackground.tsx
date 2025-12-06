@@ -13,7 +13,7 @@ const HeroVideoBackground: React.FC = () => {
       />
       
       {/* High contrast overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
       
       {/* Subtle gradient at bottom for smooth visual transition */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary to-transparent" />

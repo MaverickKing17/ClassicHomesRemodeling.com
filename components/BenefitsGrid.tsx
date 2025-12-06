@@ -51,8 +51,8 @@ const BenefitsGrid: React.FC = () => {
         }}
       />
       
-      {/* Vignette Overlay: Dark top/bottom for text legibility, Transparent center for maximum image clarity */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-black/90 z-0" />
+      {/* Vignette Overlay: Lighter edges (70%) for clearer background visibility while maintaining header contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
