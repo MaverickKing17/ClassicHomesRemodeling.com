@@ -39,8 +39,8 @@ const Footer: React.FC = () => {
           }}
         />
         
-        {/* Vignette Overlay: Reduced opacity to 40% for clearer background visibility */}
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px] z-0" />
+        {/* Overlay: Reduced opacity to 20% to match Hero clarity */}
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px] z-0" />
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="flex flex-col items-center">

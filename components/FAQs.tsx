@@ -92,8 +92,8 @@ const FAQs: React.FC = () => {
         }}
       />
       
-      {/* Vignette Gradient Overlay: Adjusted to be much clearer in the center (primary/10) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/10 to-primary/80 z-0" />
+      {/* Overlay: Standardized to 20% flat opacity to match Hero clarity */}
+      <div className="absolute inset-0 bg-primary/20 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
