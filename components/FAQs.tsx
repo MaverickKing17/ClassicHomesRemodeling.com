@@ -92,7 +92,7 @@ const FAQs: React.FC = () => {
         }}
       />
       
-      {/* Overlay: Standardized to 20% flat opacity to match Hero clarity */}
+      {/* Overlay: Reduced opacity to 20% to make the bathroom crystal clear */}
       <div className="absolute inset-0 bg-primary/20 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">

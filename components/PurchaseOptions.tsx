@@ -69,12 +69,8 @@ const PurchaseOptions: React.FC = () => {
         }}
       />
       
-      {/* Overlay: Cinematic Linear Gradient
-          - Dark at top for header text
-          - Transparent in middle for image clarity
-          - Dark at bottom for grounding
-      */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary/80 z-0" />
+      {/* Overlay: Reduced opacity to 20% to make the kitchen crystal clear */}
+      <div className="absolute inset-0 bg-primary/20 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">

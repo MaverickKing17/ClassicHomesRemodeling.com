@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           }}
         />
         
-        {/* Overlay: Reduced opacity to 20% to match Hero clarity */}
+        {/* Overlay: Reduced opacity to 20% to make the basement crystal clear */}
         <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px] z-0" />
 
         <div className="container relative z-10 mx-auto px-4">
