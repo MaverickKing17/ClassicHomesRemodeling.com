@@ -69,13 +69,17 @@ const PurchaseOptions: React.FC = () => {
         }}
       />
       
-      {/* Overlay: Standardized to 20% flat opacity to match Hero clarity */}
-      <div className="absolute inset-0 bg-primary/20 z-0" />
+      {/* Overlay: Cinematic Linear Gradient
+          - Dark at top for header text
+          - Transparent in middle for image clarity
+          - Dark at bottom for grounding
+      */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary/80 z-0" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 drop-shadow-2xl">Flexible Acquisition Options</h2>
-          <p className="text-white text-lg font-medium drop-shadow-2xl">
+          <p className="text-white text-lg font-medium drop-shadow-2xl bg-black/20 inline-block px-4 py-1 rounded-full backdrop-blur-sm">
             Whether you prefer a low monthly lease or an outright asset purchase, we have a secure structure for you.
           </p>
         </div>
@@ -142,8 +146,8 @@ const PurchaseOptions: React.FC = () => {
 
         {/* Mandatory Legal Disclaimer */}
         <div className="max-w-4xl mx-auto text-center border-t border-white/10 pt-8">
-          <p className="text-gray-400 text-xs leading-relaxed">
-            <strong className="text-gray-300">Legal Disclaimer:</strong> Classic Homes Remodeling is selling the domain name asset only. We are not a lender or financial institution. All financing is seller-carried with no credit checks required. 'Lease to Own' and 'Broker-Assisted Installment' plans are subject to specific contract terms facilitated via Escrow.com for buyer and seller protection. The 'Capital Asset' designation is for informational purposes only; buyers must consult their own CPA or tax professional regarding amortization schedules and tax deductibility eligibility under current laws. Prices and availability are subject to change without notice.
+          <p className="text-gray-300 text-xs leading-relaxed bg-black/40 p-4 rounded-xl backdrop-blur-sm inline-block">
+            <strong className="text-white">Legal Disclaimer:</strong> Classic Homes Remodeling is selling the domain name asset only. We are not a lender or financial institution. All financing is seller-carried with no credit checks required. 'Lease to Own' and 'Broker-Assisted Installment' plans are subject to specific contract terms facilitated via Escrow.com for buyer and seller protection. The 'Capital Asset' designation is for informational purposes only; buyers must consult their own CPA or tax professional regarding amortization schedules and tax deductibility eligibility under current laws. Prices and availability are subject to change without notice.
           </p>
         </div>
       </div>
