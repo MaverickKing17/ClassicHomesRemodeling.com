@@ -10,8 +10,8 @@ const Hero: React.FC = () => {
   // HGTV-Style "7-Star" Luxury Architectural Showcase (4K)
   const VIDEO_URL = "https://videos.pexels.com/video-files/7578552/7578552-uhd_3840_2160_30fps.mp4";
   
-  // Use the same image as the background for the video poster to prevent black screen
-  const POSTER_URL = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.0.3";
+  // Matched to HeroVideoBackground for seamless transition
+  const POSTER_URL = "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3";
 
   useEffect(() => {
     // Simple client-side A/B test / Rotation
@@ -20,8 +20,6 @@ const Hero: React.FC = () => {
       "Dominate the High-End Renovation Market",
       "The Ultimate Asset for Home Remodeling"
     ];
-    // Deterministic based on hour to prevent flicker during session, or random
-    // Using random for true A/B simulation on load
     const selected = variants[Math.floor(Math.random() * variants.length)];
     setHeadline(selected);
   }, []);
@@ -35,17 +33,17 @@ const Hero: React.FC = () => {
           <img 
             src="https://i.ibb.co/gbY4JfYQ/classic-homes-remodeling-logo.png" 
             alt="Classic Homes Remodeling Logo" 
-            className="h-16 md:h-20 lg:h-24 w-auto mb-8 drop-shadow-lg"
+            className="h-16 md:h-20 lg:h-24 w-auto mb-8 drop-shadow-2xl"
           />
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 drop-shadow-2xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
             {headline.split(' ').slice(0, -2).join(' ')} <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200 drop-shadow-sm">
               {headline.split(' ').slice(-2).join(' ')}
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-200 max-w-xl mb-8 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-xl mb-8 font-medium leading-relaxed drop-shadow-md">
             Own the category-defining domain for high-end home renovations. 
             Establish instant credibility, dominate search results, and capture the premium market.
           </p>
@@ -54,7 +52,7 @@ const Hero: React.FC = () => {
             {/* Watch Video CTA */}
             <button 
               onClick={() => setShowVideo(true)}
-              className="flex items-center gap-3 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md rounded-full transition-all group"
+              className="flex items-center gap-3 px-6 py-3 bg-black/40 hover:bg-black/60 border border-white/30 backdrop-blur-md rounded-full transition-all group shadow-lg"
             >
               <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                 <Play className="w-5 h-5 text-primary fill-current ml-1" />
@@ -63,13 +61,13 @@ const Hero: React.FC = () => {
             </button>
 
             {/* Trust Badges */}
-            <div className="flex gap-4 text-xs font-semibold text-gold tracking-widest uppercase border-l border-white/20 pl-4 ml-2">
+            <div className="flex gap-4 text-xs font-semibold text-white tracking-widest uppercase border-l border-white/40 pl-4 ml-2 drop-shadow-md">
               <div className="flex flex-col gap-1">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3 h-3" /> Verified Available
+                  <CheckCircle className="w-3 h-3 text-gold" /> Verified Available
                 </span>
-                <span className="flex items-center gap-1.5 opacity-80">
-                  <CheckCircle className="w-3 h-3" /> Instant Transfer
+                <span className="flex items-center gap-1.5 opacity-90">
+                  <CheckCircle className="w-3 h-3 text-gold" /> Instant Transfer
                 </span>
               </div>
             </div>

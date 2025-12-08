@@ -30,7 +30,7 @@
         {
           "@type": "Offer",
           "name": "Buy Now",
-          "price": "25000", 
+          "price": "40000", 
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "businessFunction": "http://purl.org/goodrelations/v1#Sell"
@@ -52,23 +52,8 @@
       ]
     }
     </script>
-
-    <!-- React Import Map for Preview Environment -->
-    <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react/": "https://esm.sh/react@18.2.0/",
-    "react": "https://esm.sh/react@18.2.0",
-    "lucide-react": "https://esm.sh/lucide-react@0.344.0",
-    "vite": "https://aistudiocdn.com/vite@^7.2.4",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
-  }
-}
-</script>
-
-    <!-- Tailwind CDN for Instant Preview -->
+    
+    <!-- Tailwind CSS for Instant Preview -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -87,13 +72,26 @@
               sans: ['Inter', 'system-ui', 'sans-serif'],
             },
             spacing: {
-              'touch': '44px',
+              'touch': '44px', // Minimum touch target
             }
           }
         }
       }
     </script>
-  </head>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+</head>
   <body class="bg-surface text-secondary antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
